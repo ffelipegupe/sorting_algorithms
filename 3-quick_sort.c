@@ -35,11 +35,18 @@ int partition(int *array, int low, int high, size_t size)
 		if (array[j] <= pivot)
 		{
 			a++;
-			swapper(&array[a], &array[j]);
+			if (a != j)
+			{
+				swapper(&array[a], &array[j]);
+				print_array(array, size);
+			}
 		}
 	}
-	swapper(&array[a + 1], &array[high]);
-	print_array(array, size);
+	if (pivot < array[a + 1])
+	{
+		swapper(&array[a + 1], &array[high]);
+		print_array(array, size);
+	}
 	return (a + 1);
 }
 
