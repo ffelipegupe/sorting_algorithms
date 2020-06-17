@@ -36,7 +36,6 @@ int partition(int *array, int low, int high, size_t size)
 		{
 			a++;
 			swapper(&array[a], &array[j]);
-			print_array(array, size);
 		}
 	}
 	swapper(&array[a + 1], &array[high]);
